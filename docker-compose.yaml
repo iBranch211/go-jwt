@@ -1,0 +1,15 @@
+version: "3"
+services:
+  app:
+    build: .
+    container_name: app
+    restart: unless-stopped
+    environment:
+      TZ: "Europe/Istanbul"
+      PORT: 8081
+      JWT_TOKEN_EXP_SECOND: 86400
+      JWT_TOKEN_MAX_REFRESH_SECOND: 86400
+      JWT_TOKEN_SECRET: "R1BYcTVXVGNDU2JmWHVnZ1lnN0FKeGR3cU1RUU45QXV4SDJONFZ3ckhwS1N0ZjNCYVkzZ0F4RVBSS1UzRENwRw=="
+      TOKEN_IDENTITY_KEY : "id"
+    ports:
+      - "8081:8081"
